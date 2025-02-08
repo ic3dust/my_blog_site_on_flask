@@ -174,5 +174,5 @@ cython_debug/
 app.db
 **/.DS_Store
 
-#config.py
+#config file
 config.py

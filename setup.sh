@@ -25,7 +25,7 @@ source venv/bin/activate
 echo "Upgrading pip and installing dependencies..."
 pip install --upgrade pip
 
-pip install flask flask-wtf python-dotenv flask-sqlalchemy flask-migrate flask-login email-validator
+pip install flask flask-wtf python-dotenv flask-sqlalchemy flask-migrate flask-login email-validator #aiosmtpd
 
 
 # Check if the Flask app file exists
@@ -37,6 +37,7 @@ fi
 
 # Export the Flask app environment variable
 export FLASK_APP=$FLASK_APP_FILE
+export FLASK_DEBUG=1
 
 # Run the Flask application
 echo "Starting Flask server..."
