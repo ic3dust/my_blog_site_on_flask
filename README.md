@@ -65,9 +65,10 @@ to reset the database to it's initial state.
 
 , which writes all the changes atomically.
 
-### Example:
+### Example(acting in database directly):
 
 > > > u = User(username='susan', email='susan@example.com')
+> > > u.set_password('your password')
 > > > db.session.add(u)
 > > > db.session.commit()
 
