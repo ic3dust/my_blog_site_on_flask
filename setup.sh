@@ -25,7 +25,7 @@ source venv/bin/activate
 echo "Upgrading pip and installing dependencies..."
 pip install --upgrade pip
 
-pip install flask flask-wtf python-dotenv flask-sqlalchemy flask-migrate flask-login email-validator flask-mail pyjwt
+pip install flask flask-wtf python-dotenv flask-sqlalchemy flask-migrate flask-login email-validator flask-mail pyjwt flask-moment flask-babel
 #aiosmtpd
 
 

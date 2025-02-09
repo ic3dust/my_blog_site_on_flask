@@ -80,3 +80,5 @@ The answer to the query "select all users":
 > > > [<User john>, <User susan>]
 
 If you would use flask shell, py, python or python3 interpreters, to exit just press CTRL+Z.
+
+09.02.2025 21:22 - added README4ME.txt(gitignoring) for myself as a guide, working through the functions of the app.
