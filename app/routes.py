@@ -29,9 +29,10 @@ def index():
         if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
+    delete_form=EmptyForm()
     return render_template('index.html', title='Home', form=form,
                            posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
+                           prev_url=prev_url, delete_form=delete_form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -83,9 +84,9 @@ def user(username):
         if posts.has_next else None
     prev_url = url_for('user', username=user.username, page=posts.prev_num) \
         if posts.has_prev else None
-    form = EmptyForm()
+    delete_form = EmptyForm()
     return render_template('user.html', user=user, posts=posts.items,
-                           next_url=next_url, prev_url=prev_url, form=form)
+                           next_url=next_url, prev_url=prev_url, delete_form=None)
 
 #@before_request decorator from Flask registers the decorated 
 # function to be executed right before the viewfunction.
@@ -164,8 +165,9 @@ def explore():
         if posts.has_next else None
     prev_url = url_for('explore', page=posts.prev_num) \
         if posts.has_prev else None
+    delete_form=EmptyForm()
     return render_template("index.html", title='Explore', posts=posts.items,
-                           next_url=next_url, prev_url=prev_url)
+                           next_url=next_url, prev_url=prev_url, delete_form=None)
 
 @app.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
@@ -196,3 +198,15 @@ def reset_password(token):
         flash(_('Your password has been reset.'))
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+@app.route('/delete_post/<int:post_id>',methods=['POST'])
+def delete_post(post_id):
+    post=db.get_or_404(Post, post_id)
+    if post.author != current_user:
+        flash(_('You can delete only your posts!'))
+        return redirect(url_for('index'))
+    
+    db.session.delete(post)
+    db.session.commit()
+    flash(_('Your post has been deleted.'))
+    return redirect(request.referrer or url_for('index'))

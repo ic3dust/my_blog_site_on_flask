@@ -15,6 +15,14 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
+If you can not run the setup like me(from WSL):
+
+```bash
+sudo apt install dos2unix
+dos2unix setup.sh
+./setup.sh
+```
+
 You do not need to run this every time you want to
 run the app,
 
@@ -81,18 +89,20 @@ db.session.scalars(queryP).all()
 
 # Create posts:
 
-````bash
+```bash
 u=db.session.get(User 1)
 p=Post(body="I'm user 1", author=u)
 db.session.add(p)
 db.session.commit()
+```
+
 # Remove posts:
 
 ```bash
 post = db.session.get(Post,1)
 db.session.delete(post)
 db.session.commit()
-````
+```
 
 or remove all of them:
 

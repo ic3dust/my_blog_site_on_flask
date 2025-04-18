@@ -1,0 +1,93 @@
+2025-04-18 15:29:47,235 ERROR: Exception on /explore [GET] [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/routes.py", line 169, in explore
+    return render_template("index.html", title='Explore', posts=posts.items,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/index.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/base.html", line 60, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/index.html", line 10, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/_post.html", line 11, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
+2025-04-18 15:30:55,949 ERROR: Exception on /explore [GET] [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/routes.py", line 169, in explore
+    return render_template("index.html", title='Explore', posts=posts.items,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/index.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/base.html", line 60, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/index.html", line 10, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/_post.html", line 11, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
+2025-04-18 15:35:44,402 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]

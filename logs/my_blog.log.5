@@ -1,0 +1,116 @@
+2025-04-18 15:41:46,086 ERROR: Exception on / [GET] [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/routes.py", line 95, in before_request
+    if current_user.is_authenticated:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/werkzeug/local.py", line 318, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/werkzeug/local.py", line 526, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask_login/utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/models.py", line 110, in load_user
+    return db.session.get(User, int(id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 1058, in get
+    return self._proxied.get(
+           ^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 3694, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 3874, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1630, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 711, in _compile_w_cache
+    compiled_sql = self._compiler(
+                   ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 320, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 1446, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 886, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 932, in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/visitors.py", line 141, in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 4728, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/base.py", line 686, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 447, in create_for_statement
+    return cls._create_orm_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 1175, in _create_orm_context
+    _QueryEntity.to_compile_state(
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 2630, in to_compile_state
+    _MapperEntity(
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 2710, in __init__
+    entity._post_inspect
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 4214, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 4255, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/relationships.py", line 1659, in do_init
+    self._check_cascade_settings(self._cascade)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/relationships.py", line 2002, in _check_cascade_settings
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: For many-to-many relationship User.following, delete-orphan cascade is normally configured only on the "one" side of a one-to-many relationship, and not on the "many" side of a many-to-one or many-to-many relationship.  To force this relationship to allow a particular "User" object to be referenced by only a single "User" object at a time via the User.following relationship, which would allow delete-orphan cascade to take place in this direction, set the single_parent=True flag. (Background on this error at: https://sqlalche.me/e/20/bbf0)
+2025-04-18 15:42:29,840 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]

@@ -1,27 +1,63 @@
 {% macro form_field(field, autofocus) %}
 {%- if field.type == 'BooleanField' %}
-<div class="form-check mb-3">
-    {{ field(class='form-check-input', style='background-color: var(--bs-secondary-bg);') }}
+<style>
+    .custom-checkbox-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .custom-checkbox-wrapper input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-color: var(--bs-secondary-bg);
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        border-radius: 4px;
+    }
+
+    .custom-checkbox-wrapper input[type="checkbox"]:checked::before {
+        content: "✓";
+        color: black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+    }
+</style>
+
+<div class="custom-checkbox-wrapper mb-3">
+    {{ field(class='custom-checkbox') }}
     {{ field.label(class='form-check-label') }}
 </div>
+
+
 {%- elif field.type == 'RadioField' %}
 {{ field.label(class='form-label') }}
 {%- for item in field %}
 <div class="form-check{% if loop.last %} mb-3{% endif %}">
-    {{ item(class='form-check-input', style='--bs-table-bg: var(--bs-secondary-bg);') }}
+    {{ item(class='form-check-input', style='--bs-table-bg: var(--bs-secondary-bg); --bs--color:black;') }}
     {{ item.label(class='form-check-label') }}
 </div>
 {%- endfor %}
 {%- elif field.type == 'SelectField' %}
 {{ field.label(class='form-label') }}
-{{ field(class='form-select mb-3', style='background-color: var(--bs-secondary-bg); color: white;') }}
+{{ field(class='form-select mb-3', style='background-color: var(--bs-secondary-bg); --bs--color:black;') }}
 {%- elif field.type == 'TextAreaField' %}
 <div class="mb-3">
     {{ field.label(class='form-label') }}
     {% if autofocus %}
-    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), autofocus=True, style='background-color: var(--bs-secondary-bg); color: white;') }}
+    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), autofocus=True, style='background-color: var(--bs-secondary-bg); color: black;') }}
     {% else %}
-    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), style='background-color: var(--bs-secondary-bg); color: white;') }}
+    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), style='background-color: var(--bs-secondary-bg); color: black;') }}
     {% endif %}
     {%- for error in field.errors %}
     <div class="invalid-feedback">{{ error }}</div>
@@ -33,9 +69,9 @@
 <div class="mb-3">
     {{ field.label(class='form-label') }}
     {% if autofocus %}
-    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), autofocus=True, style='background-color: var(--bs-secondary-bg); color: white;') }}
+    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), autofocus=True, style='background-color: var(--bs-secondary-bg); color: black;') }}
     {% else %}
-    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), style='background-color: var(--bs-secondary-bg); color: white;') }}
+    {{ field(class='form-control' + (' is-invalid' if field.errors else ''), style='background-color: var(--bs-secondary-bg); color: black;') }}
     {% endif %}
     {%- for error in field.errors %}
     <div class="invalid-feedback">{{ error }}</div>

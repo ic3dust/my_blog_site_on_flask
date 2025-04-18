@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-09 17:37+0300\n"
+"POT-Creation-Date: 2025-04-18 18:40+0300\n"
 "PO-Revision-Date: 2025-02-09 17:40+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -83,47 +83,58 @@ msgstr "Запит на зміну паролю"
 msgid "Your post is now live!"
 msgstr "Ваш пост опубліковано!"
 
-#: app/routes.py:45
+#: app/routes.py:46
 msgid "Invalid username or password"
 msgstr "Неправильний пароль чи логін"
 
-#: app/routes.py:69
+#: app/routes.py:70
 msgid "Congratulations, you are now a registered user!"
 msgstr "Вітаю, ви зареєстрований користувач!"
 
-#: app/routes.py:106
+#: app/routes.py:108
 msgid "Your changes have been saved."
 msgstr "Ваші зміни збережено."
 
-#: app/routes.py:125
+#: app/routes.py:124 app/routes.py:145
+#, fuzzy, python-brace-format, python-format
+msgid "User %(username)s not found."
+msgstr "Користувача %{username}s не знайдено."
+
+#: app/routes.py:127
 msgid "You cannot follow yourself!"
 msgstr "Підписатися на самого себе не можна!"
 
-#: app/routes.py:129
-#, python-brace-format
-msgid "You are following %{username}s!"
+#: app/routes.py:131
+#, fuzzy, python-brace-format, python-format
+msgid "You are following %(username)s!"
 msgstr "Ви слідкуєте за %{username}s!"
 
-#: app/routes.py:143
-#, python-brace-format
-msgid "User %{username}s not found."
-msgstr "КОристувача %{username}s не знайдено."
-
-#: app/routes.py:146
+#: app/routes.py:148
 msgid "You cannot unfollow yourself!"
 msgstr "Не можна відписатися від самого себе!"
 
-#: app/routes.py:150
-#, python-brace-format
-msgid "You are not following %{username}s."
+#: app/routes.py:152
+#, fuzzy, python-brace-format, python-format
+msgid "You are not following %(username)s."
 msgstr "Ви не підписані на %{username}s."
 
-#: app/routes.py:179
+#: app/routes.py:182
 msgid "Check your email for the instructions to reset your password"
-msgstr "Перевірте свою електронну адресу з інструкціями до подальших дій щодо зміни паролю"
+msgstr ""
+"Перевірте свою електронну адресу з інструкціями до подальших дій щодо "
+"зміни паролю"
 
-#: app/routes.py:195
+#: app/routes.py:198
 msgid "Your password has been reset."
+msgstr "Ваш пароль успішно змінено"
+
+#: app/routes.py:206
+msgid "You can delete only your posts!"
+msgstr "Ви можете видаляти тільки свої пости!"
+
+#: app/routes.py:211
+#, fuzzy
+msgid "Your post has been deleted."
 msgstr "Ваш пароль успішно змінено"
 
 #: app/templates/404.html:4
@@ -142,27 +153,43 @@ msgstr "Непередбачена помилка"
 msgid "The administrator has been notified. Sorry for the inconvenience!"
 msgstr "Адміністратора повідомлено. Пробачте за незручності!"
 
-#: app/templates/_post.html:14
+#: app/templates/_post.html:2
+msgid "Are you sure you want to delete this post?"
+msgstr "Ви впевнені, що хочете видалити цей пост?"
+
+#: app/templates/_post.html:39
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s написав/ла %(when)s"
 
+#: app/templates/base.html:10
+msgid "Welcome to my blog"
+msgstr "Ласкаво прошу до мого блогу!"
+
+#: app/templates/base.html:28
+msgid "Home"
+msgstr "Головна"
+
+#: app/templates/base.html:31
+msgid "Explore"
+msgstr "Стрічка"
+
+#: app/templates/base.html:37
+msgid "Login"
+msgstr "Увійти"
+
+#: app/templates/base.html:42
+#, fuzzy
+msgid "Profile"
+msgstr "Профіль"
+
+#: app/templates/base.html:45
+msgid "Logout"
+msgstr "Вийти"
+
 #: app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "Змінити профіль"
-
-#: app/templates/index.html:5
-#, python-format
-msgid "Hi, %(username)s!"
-msgstr "Привіт, %(username)s!"
-
-#: app/templates/index.html:16 app/templates/user.html:47
-msgid "Newer posts"
-msgstr "Новіші публікації"
-
-#: app/templates/index.html:21 app/templates/user.html:52
-msgid "Older posts"
-msgstr "Попередні публікації"
 
 #: app/templates/login.html:7
 msgid "New User?"
@@ -188,34 +215,45 @@ msgstr "Змініть свій пароль"
 msgid "Reset Password"
 msgstr "Змінити пароль"
 
-#: app/templates/user.html:10
+#: app/templates/user.html:14
 msgid "User"
 msgstr "Користувач"
 
-#: app/templates/user.html:15
+#: app/templates/user.html:19
 msgid "Last seen on"
 msgstr "Востаннє на зв'язку"
 
-#: app/templates/user.html:18
+#: app/templates/user.html:22
 #, python-format
 msgid "%(count)d followers"
 msgstr "%(count)d - ваші підписники"
 
-#: app/templates/user.html:18
+#: app/templates/user.html:22
 #, python-format
 msgid "%(count)d following"
 msgstr "%(count)d - ви підписані"
 
-#: app/templates/user.html:21
+#: app/templates/user.html:25
 msgid "Edit your profile"
 msgstr "Змінити профіль"
 
-#: app/templates/user.html:26
+#: app/templates/user.html:30
 msgid "Follow"
 msgstr "Пдписатися"
 
-#: app/templates/user.html:33
+#: app/templates/user.html:37
 msgid "Unfollow"
 msgstr "Відписатися"
 
+#: app/templates/user.html:51
+msgid "Newer posts"
+msgstr "Новіші публікації"
+
+#: app/templates/user.html:56
+msgid "Older posts"
+msgstr "Попередні публікації"
+
+#: app/templates/index.html:5
+msgid "Hi, %(username)s!"
+msgstr "Привіт, %(username)s!"
 

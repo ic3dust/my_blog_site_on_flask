@@ -1,26 +1,13 @@
-2025-04-18 11:27:14,041 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:01:26,488 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:11:53,042 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:19:48,766 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:20:13,736 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:20:33,535 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:23:48,099 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:32:26,719 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:36:24,053 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:41:02,320 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:42:21,240 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:49:42,397 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:50:39,938 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:51:41,812 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:52:17,683 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:54:47,804 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:57:27,584 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 12:59:34,370 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:01:48,279 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:02:41,626 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:06:01,391 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:07:29,042 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:07:31,349 ERROR: Exception on / [GET] [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py:875]
+2025-04-18 17:26:14,691 ERROR: Exception on /login [POST] [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -34,44 +21,58 @@ Traceback (most recent call last):
   File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/routes.py", line 32, in index
-    return render_template('index.html', title='Home', form=form,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/index.html", line 1, in top-level template code
-    {% block content %}
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/templates/index.html", line 4, in block 'content'
-    {{ wtf.quick_form(form) }}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/routes.py", line 43, in login
+    user = db.session.scalar(
+           ^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 1841, in scalar
+    return self._proxied.scalar(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2413, in scalar
+    return self._execute_internal(
            ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'wtf' is undefined
-2025-04-18 13:07:57,797 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:11:29,533 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:12:52,726 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:15:18,580 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:17:33,217 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:18:20,308 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:19:34,873 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:20:42,688 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:22:30,127 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:25:09,554 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:28:50,144 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:29:27,730 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:31:22,951 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:38:20,588 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:44:33,251 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
-2025-04-18 13:47:16,633 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('admin',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-18 17:27:08,352 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:37:51,260 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:38:33,687 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:38:55,312 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:39:58,626 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:41:19,895 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:41:38,953 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:41:54,252 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:42:17,426 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:44:09,277 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:46:20,439 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:47:46,741 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:48:44,865 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
+2025-04-18 17:50:58,489 INFO: Microblog startup [in /mnt/c/Users/DELL/Desktop/blog/my_blog_site_on_flask/app/__init__.py:57]
