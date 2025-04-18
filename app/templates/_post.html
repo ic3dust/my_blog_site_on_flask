@@ -1,4 +1,10 @@
-<table class="table table-hover">
+<table class="table table-hover" style="
+    --bs-table-bg: var(--bs-secondary-bg);
+     width: 100%;
+     margin-bottom: 1rem;
+     vertical-align: top;
+     border-color: var(--bs-table-border-color);
+">
     <tr>
         <td width="70px">
             <a href="{{ url_for('user', username=post.author.username) }}">

@@ -1,5 +1,5 @@
 from flask import Flask, request
-from config import Config
+from config_ex import Config
 from flask_moment import Moment
 
 from flask_sqlalchemy import SQLAlchemy

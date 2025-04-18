@@ -2,7 +2,7 @@
 
 # Define the project directory based on the current working directory
 PROJECT_DIR=$(pwd)
-FLASK_APP_FILE="microblog.py"
+FLASK_APP_FILE="myblog.py"
 
 # Navigate to the project directory
 cd "$PROJECT_DIR" || { echo "Project directory not found!"; exit 1; }
